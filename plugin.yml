@@ -1,0 +1,32 @@
+name: HGPlus
+main: HG/HG
+version: 1.0.0-beta
+api: 1.8.0
+load: STARTUP
+author: CrownNetworks
+website: http://royal-crown.co
+commands:
+ start:
+  description: "Starts a HungerGames game."
+  usage: "/HG start"
+  permission: hgplus.command.start
+ stop:
+  description: "Stops the HungerGames game."
+  usage: "/HGstop"
+  permission: hgplus.command.stop
+
+permissions:
+ hgplus:
+  default: op
+  description: "Allows using everything HGPlus Has"
+  children:
+   hgplus.command:
+    description: "Allows using HGPlus commands"
+    default: false
+    children:
+     hgplus.command.start:
+      description: "Starts a HungerGames game."
+      default: false
+     hgplus.command.stop:
+      description: "Stops a HungerGames game."
+      default: false
